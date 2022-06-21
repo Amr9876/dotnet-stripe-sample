@@ -10,10 +10,13 @@ public class CheckoutApiController : ControllerBase
 {
 
   private readonly SessionService _sessionService;
+  
+  private readonly IConfiguration _config;
 
-  public CheckoutApiController(SessionService sessionService)
+  public CheckoutApiController(SessionService sessionService, IConfiguration config)
   {
     _sessionService = sessionService;
+    _config = config;
   }
 
   [HttpPost]
@@ -30,7 +33,7 @@ public class CheckoutApiController : ControllerBase
       {
         new SessionLineItemOptions
         {
-          Price = "price_1LCRdeCDTvafG9qIuK45Mfg3",
+          Price = _config["StripeProductPrice"],
           Quantity = 1,
         },
       },

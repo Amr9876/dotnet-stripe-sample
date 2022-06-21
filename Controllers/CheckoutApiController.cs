@@ -23,7 +23,7 @@ public class CheckoutApiController : ControllerBase
   public async Task<IActionResult> Create()
   {
 
-    string domain = "https://localhost:5001";
+    string domain = "https://dotnet-stripe-sample.herokuapp.com";
 
     var options = new SessionCreateOptions
     {

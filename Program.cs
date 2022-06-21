@@ -9,7 +9,7 @@ builder.Services.AddScoped<SessionService>();
 
 var app = builder.Build();
 
-StripeConfiguration.ApiKey = "sk_test_51LCRRsCDTvafG9qIN4HsY0fR0TkwLhwOIBDUmBXmlVYEtdm7Z9vn5ea1KM7Sr5JBn7KYA0OMQxjM5TooVJ5hJHgP00GhPHYKX4";
+StripeConfiguration.ApiKey = builder.Configuration["StripeApiKey"];
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
